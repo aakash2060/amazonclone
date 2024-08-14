@@ -1,9 +1,12 @@
 import "./App.css";
-
+import Header from "./Header.js";
+import Home from './Home.js'
 function App() {
   return (
     <div className="App">
-      <h1>Amazon Clone 🚀</h1>
+      <Header />
+      <Home />
+      div.home
     </div>
   );
 }
