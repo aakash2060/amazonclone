@@ -1,12 +1,13 @@
 import "./App.css";
 import Header from "./Header.js";
-import Home from './Home.js'
+import Home from "./Home.js";
+import Product from "./Product.js";
 function App() {
   return (
     <div className="App">
       <Header />
       <Home />
-      div.home
+      <Product />
     </div>
   );
 }
