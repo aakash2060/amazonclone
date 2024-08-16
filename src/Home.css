@@ -3,19 +3,26 @@
     justify-content: center;
     margin: 0 auto;
     max-width: 1500px;
+    position: relative; /* Position the home container relative to allow absolute positioning inside */
+    background: gainsboro;
 }
+
+.home__container {
+    position: relative;
+    width: 100%;
+}
+
+.home__image {
+    width: 100%;
+    z-index: -1;
+    margin-bottom: -150px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
 .home__row {
     display: flex;
     z-index: 1;
     margin: 0 15px;
-
-}
-
-
-.home__image {
-
-    width: 100%;
-    z-index: -1;
-    margin-bottom: -150px;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    position: relative;
+    top: -250px; /* Adjust this value to position the products midway over the carousel */
 }

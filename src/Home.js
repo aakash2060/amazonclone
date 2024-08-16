@@ -1,15 +1,12 @@
 import React from "react";
 import "./Home.css";
 import Product from "./Product";
+import ControlledCarousel from "./Carousel.js";
 function Home() {
   return (
     <div className="home">
       <div className="home__container">
-        <img
-          className="home__image"
-          src="https://m.media-amazon.com/images/I/41o3odPQPVL._SX1500_.jpg"
-          alt=""
-        />
+        <ControlledCarousel />
         <div className="home__row">
           <Product
             id="1"

@@ -1,16 +1,42 @@
-.checkout{
+.checkout {
     display: flex;
     padding: 20px;
     background-color: white;
-    height: max-content;
+    height: auto; /* Adjust height based on content */
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+}
+
+.checkout__left, .checkout__right {
+    width: 100%; /* Full width by default */
+}
+
+.checkout__left {
+    margin-bottom: 20px; /* Space between left and right sections on smaller screens */
 }
 
 .checkout__ad {
     width: 100%;
+    height: auto; /* Maintain aspect ratio */
     margin-bottom: 10px;
+    object-fit: cover; /* Ensure the image covers its container */
 }
 
-.checkout_title {
+@media (min-width: 768px) {
+    .checkout {
+        flex-direction: row; /* Side-by-side layout for larger screens */
+    }
+
+    .checkout__left {
+        flex: 0.7; /* 70% of the width for the left section */
+        margin-right: 20px;
+    }
+
+    .checkout__right {
+        flex: 0.3; /* 30% of the width for the right section */
+    }
+}
+
+.checkout__title {
     margin-right: 10px;
     padding: 10px;
     border-bottom: 1px solid lightgray;

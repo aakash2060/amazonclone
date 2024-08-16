@@ -1,0 +1,24 @@
+.carousel-item {
+    position: relative;
+    overflow: hidden; /* Ensure the gradient and image stay within the carousel bounds */
+    width: 100%;
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Start the gradient at the bottom */
+    left: 0;
+    width: 100%;
+    height: 50%; /* Adjust this to control the height of the fade effect */
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); /* Fading effect to white */
+    z-index: 1; /* Ensure the gradient is above the image but below any content */
+}
+
+.carousel__image {
+    width: 100%;
+    height: auto; /* Adjust height to maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the carousel item */
+    position: relative;
+    z-index: 0; /* Make sure the image is under the gradient */
+}

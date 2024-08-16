@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Us
 import Login from "./Login.js";
 import { auth } from "./firebase.js";
 import { useStateValue } from "./StateProvider.js";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [{}, dispatch] = useStateValue();
