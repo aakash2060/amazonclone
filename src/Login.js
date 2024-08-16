@@ -1,18 +1,35 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
+import { auth } from "./firebase"; // Import your configured auth instance
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const signIn = (e) => {
-    e.PreventDefault();
-    //firebase login
+    e.preventDefault();
+    // Firebase login
+    signInWithEmailAndPassword(auth, email, password)
+      .then((auth) => {
+        navigate("/");
+      })
+      .catch((error) => alert(error.message));
   };
+
   const register = (e) => {
-    e.PreventDefault();
-    //firebase register
+    e.preventDefault();
+    // Firebase register
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((auth) => {
+        navigate("/");
+      })
+      .catch((error) => alert(error.message));
   };
 
   return (
@@ -21,7 +38,7 @@ function Login() {
         <img
           className="login__logo"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Amazon_2024.svg/1024px-Amazon_2024.svg.png"
-          alt=""
+          alt="Amazon Logo"
         />
       </Link>
 
@@ -33,7 +50,7 @@ function Login() {
             type="text"
             className="email"
             value={email}
-            onChange={(e) => setEmail(e.target.email)}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <h5>Password</h5>
           <input
@@ -47,7 +64,6 @@ function Login() {
             onClick={signIn}
             className="login__signInButton"
           >
-            {" "}
             Sign In
           </button>
         </form>
