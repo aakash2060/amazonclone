@@ -11,12 +11,18 @@
     background-color: white;
     z-index: 1;
 }
+.product__rating {
+    display: flex;
+    margin-bottom: 10px;
+    
+}
 
 .product > img {
+
     max-height: 200px;
     width: 100%;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin: 15px 0;
 
 }
 .product > button {
@@ -28,10 +34,12 @@
 }
 .product__price{
     margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 .product__info{
     height: 100px;
-    margin-bottom: 15px;
 
 }
+
+
