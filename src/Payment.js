@@ -2,12 +2,16 @@ import React from "react";
 import { useStateValue } from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
 import { NavItem } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
+import "./Payment.css";
 function Payment() {
   const [{ user, cart }, dispatch] = useStateValue();
   return (
     <div className="payment">
       <div className="payment__container">
+        <h1>
+          Checkout (<Link to="/checkout">{cart?.length} items</Link>)
+        </h1>
         <div className="payment__section">
           <div className="payment__title">
             <h3>Delivery Address</h3>
