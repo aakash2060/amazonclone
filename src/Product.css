@@ -42,3 +42,6 @@
     height: 100px;
 
 }
+.product__title:hover{
+    color: orange;
+}
