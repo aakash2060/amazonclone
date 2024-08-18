@@ -3,14 +3,14 @@ import "./CheckoutProduct.css";
 import { useStateValue } from "./StateProvider";
 
 function CheckoutProduct({ id, image, title, price, rating }) {
-    const [{cart}, dispatch] = useStateValue();
+  const [{ cart }, dispatch] = useStateValue();
 
-    const removeFromCart = () => {
-        dispatch({
-            type: 'REMOVE_FROM_CART',
-            id: id,
-        })
-    }
+  const removeFromCart = () => {
+    dispatch({
+      type: "REMOVE_FROM_CART",
+      id: id,
+    });
+  };
 
   return (
     <div className="checkoutProduct">
@@ -25,7 +25,7 @@ function CheckoutProduct({ id, image, title, price, rating }) {
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <p>⭐</p>
+              <p key={i}>⭐</p>
             ))}
         </p>
         <button onClick={removeFromCart}>Remove from Cart</button>
